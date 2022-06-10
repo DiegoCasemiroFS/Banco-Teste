@@ -6,9 +6,9 @@ public class Cliente {
 
     public static void main(String[] args) {
 
-        Conta conta = new Conta(7352, 191352);
-        Conta conta2 = new Conta(7350, 112352);
+        Conta conta = new Conta();
     }
+
 
     public String getNome() {
         return nome;

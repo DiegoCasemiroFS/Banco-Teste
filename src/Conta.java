@@ -1,17 +1,22 @@
+import java.util.Random;
 public class Conta {
 
     private double saldo;
-    private int agencia;
+    private float agencia;
     private int numero;
     private Cliente titular;
     private static int total;
 
-    public Conta(int agencia, int numero) {
+    public Conta() {
         setTotal(getTotal() + 1);
         System.out.println("essa eh a " + getTotal() + "a conta");
-        this.agencia = agencia;
-        this.numero = numero;
-        System.out.println("agencia:" + agencia + " e numero:" + numero);
+        Random agencia = new Random();
+        float valorAgencia = agencia.nextFloat() * 10000;
+        this.agencia = valorAgencia;
+        Random numero = new Random();
+        float valorNumero = numero.nextFloat() * 10000;
+        this.agencia = valorNumero;
+        System.out.println("agencia:" + valorAgencia + " e numero:" + valorNumero);
     }
 
     public void deposita (double valor) {
@@ -45,11 +50,11 @@ public class Conta {
         this.numero = numero;
     }
 
-    public int getAgencia() {
+    public float getAgencia() {
         return agencia;
     }
 
-    public void setAgencia(int agencia) {
+    public void setAgencia(float agencia) {
         this.agencia = agencia;
     }
 
